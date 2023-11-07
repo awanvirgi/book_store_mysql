@@ -2,7 +2,7 @@
 CREATE TABLE `penulis`(
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `nama` VARCHAR(255) NOT NULL,
-    `email` VARCHAR(255) UNIQUE,
+    `email` VARCHAR(255) NOT NULL,
     `tanggal_lahir` DATE
 );
 
@@ -18,7 +18,7 @@ CREATE TABLE `kategori`(
 CREATE TABLE `tahun`(
 	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`tahun` INT NOT NULL,
-	`musim` VARCHAR(20),
+	`musim` VARCHAR(20) NOT NULL,
 	`status_aktif` BOOLEAN DEFAULT TRUE
 );
 
@@ -40,7 +40,8 @@ CREATE TABLE `buku`(
 CREATE TABLE `transaksi`(
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `date` date NOT NULL,
-    `metode` ENUM("Tunai","Kartu Kredit","Transfer Bank")
+    `metode` ENUM("Tunai","Kartu Kredit","Transfer Bank"),
+    `keterangan` text
 );
 
 -- Membuat tabel untuk menyimpan setiap transaksi per buku
