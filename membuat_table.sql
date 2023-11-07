@@ -40,7 +40,7 @@ CREATE TABLE `buku`(
 CREATE TABLE `transaksi`(
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `date` date NOT NULL,
-    `metode` ENUM("Tunai","Kartu Kredit","Transfer Bank") NOT NULL
+    `metode` ENUM("Tunai","Kartu Kredit","Transfer Bank")
 );
 
 -- Membuat tabel untuk menyimpan setiap transaksi per buku
